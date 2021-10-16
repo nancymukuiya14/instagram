@@ -6,3 +6,22 @@
 #insta {
     background-color: #ee376a;
 }
+#app {
+    background-color: #f1260b;
+}
+.modal-header {
+    background-color:#ee376a; 
+}
+#upload {
+    background-color: #ee376a;
+    position: relative;
+    top: 10px;
+    color: white;
+}
+.container-fluid {
+    background-image: url("static/images/insta2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
