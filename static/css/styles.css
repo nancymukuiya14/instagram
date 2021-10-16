@@ -1,5 +1,8 @@
 .icons {
     display:flex;
-    justify-content:center;
+    justify-content:space-evenly;
 
+}
+#insta {
+    background-color: #ee376a;
 }
