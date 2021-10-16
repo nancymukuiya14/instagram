@@ -22,10 +22,10 @@ To get the project .......
 * python manage.py migrate
 * python manage.py runserver
 ## Technology used
-Python3.7.3
-Django2.2.4
-PostgreSQL
-heroku
+* Python3.7.3
+* Django2.2.4
+* PostgreSQL
+* heroku
 
 ## Known Bugs
 There are no known bugs currently but pull requests are allowed incase you spot a bug
