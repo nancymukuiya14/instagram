@@ -54,7 +54,8 @@ def profile(request, username):
     images = request.user.profile.posts.all()
     if request.method == 'POST':
         user_form = UpdateUserForm(request.POST, instance=request.user)
-        prof_form = UpdateUserProfileForm(request.POST, request.FILES, instance=request.user.profile)
+        prof_form = UpdateUserProfileForm(
+            request.POST, request.FILES, instance=request.user.profile)
         if user_form.is_valid() and prof_form.is_valid():
             user_form.save()
             prof_form.save()
@@ -77,7 +78,7 @@ def user_profile(request, username):
     if request.user == user_prof:
         return redirect('profile', username=request.user.username)
     user_posts = user_prof.profile.posts.all()
-    
+
     followers = Follow.objects.filter(followed=user_prof.profile)
     follow_status = None
     for follower in followers:
@@ -178,7 +179,8 @@ def like_post(request):
         'total_likes': image.total_likes()
     }
     if request.is_ajax():
-        html = render_to_string('instagram/like_section.html', params, request=request)
+        html = render_to_string(
+            'instagram/like_section.html', params, request=request)
         return JsonResponse({'form': html})
 
 
@@ -202,7 +204,8 @@ def search_profile(request):
 def unfollow(request, to_unfollow):
     if request.method == 'GET':
         user_profile2 = Profile.objects.get(pk=to_unfollow)
-        unfollow_d = Follow.objects.filter(follower=request.user.profile, followed=user_profile2)
+        unfollow_d = Follow.objects.filter(
+            follower=request.user.profile, followed=user_profile2)
         unfollow_d.delete()
         return redirect('user_profile', user_profile2.user.username)
 
@@ -210,6 +213,7 @@ def unfollow(request, to_unfollow):
 def follow(request, to_follow):
     if request.method == 'GET':
         user_profile3 = Profile.objects.get(pk=to_follow)
-        follow_s = Follow(follower=request.user.profile, followed=user_profile3)
+        follow_s = Follow(follower=request.user.profile,
+                          followed=user_profile3)
         follow_s.save()
         return redirect('user_profile', user_profile3.user.username)
