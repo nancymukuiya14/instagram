@@ -1,11 +1,9 @@
 from django.urls import path, include
-from instagram.views import PostLikeToggle, PostLikeAPIToggle,RegistrationView
+from instagram.views import PostLikeToggle, PostLikeAPIToggle
 from . import views
 
 urlpatterns = [
     path('signup/', views.signup, name='signup'),
-    path('accounts/register/', RegistrationView.as_view(success_url='/'),
-         name='django_registration_register'),
     path('account/', include('django.contrib.auth.urls')),
     path('', views.index, name='index'),
     path('profile/<username>/', views.profile, name='profile'),
