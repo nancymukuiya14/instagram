@@ -29,6 +29,13 @@ To get the project .......
 
 ## Known Bugs
 There are no known bugs currently but pull requests are allowed incase you spot a bug
+## Screenshot.
+![alt text](screenshots/pic1.png)
+![alt text](screenshots/pic2.png)
+![alt text](screenshots/pic3.png)
+![alt text](screenshots/pic6.png)
+![alt text](screenshots/pic4.png)
+![alt text](screenshots/pic5.png)
 
 ## Contact Information.
 Incase you have any questions or you would want to work with me contact me via:
